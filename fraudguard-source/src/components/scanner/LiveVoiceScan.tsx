@@ -178,9 +178,9 @@ export function LiveVoiceScan() {
   }
 
   return (
-    <div className="grid gap-5 lg:grid-cols-[1fr_1.15fr]">
+    <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
       {/* MIC + TRANSCRIPT */}
-      <GlassCard glow className="p-5 sm:p-6">
+      <GlassCard glow className="min-w-0 p-5 sm:p-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div
             className="inline-flex rounded-full border border-border bg-background/50 p-1"
@@ -278,7 +278,7 @@ export function LiveVoiceScan() {
       </GlassCard>
 
       {/* RESULT */}
-      <GlassCard className="relative min-h-[420px] p-5 sm:p-6">
+      <GlassCard className="relative min-h-[420px] min-w-0 p-5 sm:p-6">
         <AnimatePresence mode="wait">
           {result && <AnalysisResultCard key="result" result={result} />}
           {!result && (
