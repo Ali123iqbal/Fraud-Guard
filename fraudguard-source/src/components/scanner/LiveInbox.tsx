@@ -111,9 +111,9 @@ export function LiveInbox() {
   const selected = items.find((it) => it.uid === selectedUid) ?? null;
 
   return (
-    <div className="grid gap-5 lg:grid-cols-[1fr_1.15fr]">
+    <div className="grid grid-cols-1 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
       {/* FEED */}
-      <GlassCard glow className="p-5 sm:p-6">
+      <GlassCard glow className="min-w-0 p-5 sm:p-6">
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <span className="relative flex size-2.5">
@@ -204,7 +204,7 @@ export function LiveInbox() {
       </GlassCard>
 
       {/* DETAIL */}
-      <GlassCard className="relative min-h-[420px] p-5 sm:p-6">
+      <GlassCard className="relative min-h-[420px] min-w-0 p-5 sm:p-6">
         <AnimatePresence mode="wait">
           {selected?.status === "done" && selected.result && (
             <AnalysisResultCard key={selected.uid} result={selected.result} />
